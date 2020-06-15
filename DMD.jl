@@ -5,8 +5,15 @@ function DMD(X::Array{Float64,2},Y::Array{Float64,2},r::Int64)
 	"""
 		An algorithm for approximating modes of the Koopman operator
 
-		X: input time series
-		Y: output time series(X shifted forward by 1 time step)
+
+		inputs:
+
+			X: input time series
+			Y: output time series(X shifted forward by 1 time step)
+			r: rank of the truncation(assuming low-dimensional embedding)
+
+		outputs:
+			Phi: modes of the Koopman operator
 	"""
 
 	# 1. SVD of input matrix: 
