@@ -1,7 +1,7 @@
 using LinearAlgebra
 
 
-function DMD(X::Array{Float64,2},Y::Array{Float64,2},r::Int64)
+function DMD(X::Array{Float64,2},Y::Array{Float64,2})
 	"""
 		An algorithm for approximating modes of the Koopman operator
 
@@ -18,6 +18,13 @@ function DMD(X::Array{Float64,2},Y::Array{Float64,2},r::Int64)
 
 	# 1. SVD of input matrix: 
 	U_,S_,V_ = svd(X)
+
+	## compute r, the rank of the truncation, using the 90% variance heuristic: 
+	N = length(S_)
+
+	var = cumsum(S_.^2)
+	var_ = var./var[N]
+	r = findmin((var_-0.9).^2)
 
 	# rank-r truncation
 	U = U_[1:end,1:r]
