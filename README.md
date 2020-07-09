@@ -9,5 +9,5 @@ contact: aidanrocke@gmail.com
 ## Want to learn more? 
 1. [Spectral analysis of nonlinear flows](http://cwrowley.princeton.edu/papers/koopman_jfm.pdf)
 2. [DMD theory](https://arxiv.org/pdf/1312.0041.pdf)
-3.
+3. [Robust and Scalable methods for Dynamic Mode Decomposition](https://arxiv.org/pdf/1712.01883.pdf)
 4. [robust and scalable DMD](https://arxiv.org/pdf/1712.01883.pdf)
