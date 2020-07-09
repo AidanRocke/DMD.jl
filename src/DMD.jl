@@ -10,8 +10,7 @@ function DMD(X::Array{Float64,2},Y::Array{Float64,2})
 
 			X: input time series
 			Y: output time series(X shifted forward by 1 time step)
-			r: rank of the truncation(assuming low-dimensional embedding)
-
+			
 		outputs:
 			Phi: modes of the Koopman operator
 	"""
@@ -24,7 +23,7 @@ function DMD(X::Array{Float64,2},Y::Array{Float64,2})
 
 	var = cumsum(S_.^2)
 	var_ = var./var[N]
-	r = findmin((var_-0.9).^2)
+	r = findmin((var_.-0.9).^2)[2]
 
 	# rank-r truncation
 	U = U_[1:end,1:r]
